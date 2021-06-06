@@ -4,9 +4,19 @@
 
 .specialties {
     border: 2px solid blue;
-    height: 200px;
+    height: 300px;
+}
+
+.specialty-items {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 10px 0px;
 }
 
 .classics {
@@ -46,11 +56,12 @@
     border: 2px solid black;
     height: 100px;
     width: 100px;
+    /* margin: 5px; */
 }
 
 .menu-item-div {
     border: 1px solid red;
-    height: 50px;
+    height: 100%;
 }
 
 .menu-item-modal-content {
@@ -59,4 +70,83 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.covered-in-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.oreo-covering-options {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.cake-covering-options {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.cake-flavor {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.icing-flavors {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.drizzle-or-sprinkles {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.sprinkles-text {
+    margin: 5px;
+}
+
+.add-to-cart {
+    margin: 5px;
+    margin-top: 10px;
+    padding: 7px;
+}
+
+.quantity-label {
+    /* border: 2px solid black; */
+}
+
+.quantity-section {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.quantity-box {
+    /* border:1px solid black; */
+    width: 40%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.quantity-number-section {
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
 }
