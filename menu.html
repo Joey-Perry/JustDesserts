@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/menustyles.css" />
+
+    <title>Just Desserts || Menu</title>
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Just Desserts</h1>
+    </header>
+
+    <main class="main">
+      <section class="specialties">
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3>Oreo Truffles</h3>
+              
+              <h4>Covered in: </h4>
+              <div>Milk Chocolate</div>
+              <div>White Chocolate</div>
+
+              <h4><span>Drizzle </span> or <span>Sprinkles</span></h4>
+             <h4> What color sprinkles?</h4>
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+            <div class="menu-item-div">
+                <h3> Oreo Truffles </h3>
+            </div>
+        </section>
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3>Cake Balls</h3>
+
+                <h4> Covered in what kind of chocolate?</h4>
+                <div> Milk Chocolate</div>
+                <div> White Chocolate </div>
+
+              <h4>Cake Flavor?</h4>
+              <div>Funfetti</div>
+              <div>Vanilla</div>
+              <div>Red Velvet</div>
+              <div>White</div>
+              <div> Yellow</div>
+              <div>Devil's Food Cake</div>
+
+
+                <h4> Icing flavor</h4>
+                <div> Vanilla </div>
+                <div> Chocolate </div>
+                <div> Cream Cheese </div>
+
+                <h4><span>Drizzle </span> or <span>Sprinkles</span></h4>
+                <h4> What color sprinkles?</h4>
+
+
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+            <div class="menu-item-div">
+                <h3> Cake Balls </h3>
+            </div>
+        </section>
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3>The Goodness</h3>
+              <h4>Customization Options</h4>
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+          
+            <div class="menu-item-div">
+                <h3> The Goodness</h3>
+            </div>
+        </section>
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3>Chocolate Pie</h3>
+              <h4>Customization Options</h4>
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+            <div class="menu-item-div">
+                <h3> Chocolate Pie</h3>
+            </div>
+        </section>
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3>Cheesecake Brownies</h3>
+              <h4>Customization Options</h4>
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+            <div class="menu-item-div">
+                <h3> Cheesecake Brownies </h3>
+            </div>
+        </section>
+
+        <section class="menu-item">
+          <div class="modal">
+            <div class="menu-item-modal-content">
+              <span class="close">X </span>
+              <h3 id='item-six'>Mint Chocolate Lasagna</h3>
+              <h4 id='customization-option'>Customization Options</h4>
+              <button class="add-to-cart">ADD TO CART</button>
+            </div>
+          </div>
+            <div class="menu-item-div">
+                <h3> Mint Chocolate Lasagna </h3>
+            </div>
+        </section>
+      </section>
+      <section class="classics"></section>
+    </main>
+
+    <section class="cart"></section>
+    <section class="contact-info"></section>
+    <form action="#" class="final-order-form"></form>
+
+    <footer></footer>
+    <script>
+      document.querySelectorAll(".close").forEach((span) => {
+        span.addEventListener("click", () => {
+          document.querySelectorAll(".modal").forEach((modal) => {
+            modal.style.display = "none";
+          });
+        });
+      });
+
+      document.querySelectorAll('.menu-item-div').forEach(item => {
+          item.addEventListener('click', (event)=>{
+                event.target.previousElementSibling.style.display = 'block';
+          })
+      })
+      function getSiblings(event){
+          let siblings = [];
+          if (!event.parentNode){
+              return siblings;
+          }
+
+          let sibling = event.parentNode.firstChild;
+          while(sibling) {
+              if (sibling.nodeType === 1 && sibling !== event){
+                  siblings.push(sibling.id);
+              }
+              sibling = sibling.nextSibling;
+          }
+          return siblings;
+      }
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+          btn.addEventListener('click', (event)=>{
+              console.log(getSiblings(event.target));
+          })
+      })
+    </script>
+  </body>
+</html>
