@@ -4,7 +4,7 @@
 
 .specialties {
     border: 2px solid blue;
-    height: 300px;
+    height: 250px;
 }
 
 .specialty-items {
@@ -21,12 +21,32 @@
 
 .classics {
     border: 2px solid red;
-    height: 200px;
+    height: 250px;
+}
+
+.classic-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cart {
     border: 2px solid black;
     display: none;
+    height: 200px;
+    width: 200px;
+}
+
+.cart-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.cart-item {
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact-info {
@@ -54,9 +74,9 @@
 
 .menu-item {
     border: 2px solid black;
-    height: 100px;
-    width: 100px;
-    /* margin: 5px; */
+    height: 80px;
+    width: 80px;
+    margin: 5px;
 }
 
 .menu-item-div {
@@ -65,6 +85,16 @@
 }
 
 .menu-item-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;

@@ -1,31 +1,143 @@
 const grab = (element) => document.querySelector(element);
 const grabAll = (elementGroup) => document.querySelectorAll(elementGroup);
 
+
+/** Oreo Truffles */
 const chocolateCoveringSection = grab('.oreo-chocolate-covering');
 const drizzleOrSprinklesSection = grab('.oreo-drizzle-or-sprinkles-section');
 const oreoSprinklesSection = grab('#oreo-sprinkles-text');
-const cakeChocolateCoveringSection = grab('.cake-chocolate-covering');
-const cakeDrizzleOrSprinklesSection = grab('.cake-drizzle-or-sprinkles-section');
-const cakeSprinklesSection = grab('#cake-sprinkles-text');
 const oreoBtn = grab('#oreo-add');
+
+/** Cake Balls */
 const cakeBtn = grab('#cake-add');
 const cakeFlavorsSection = grab('.cake-section');
 const icingFlavorsSection = grab('.icing-section');
+const cakeChocolateCoveringSection = grab('.cake-chocolate-covering');
+const cakeDrizzleOrSprinklesSection = grab('.cake-drizzle-or-sprinkles-section');
+const cakeSprinklesSection = grab('#cake-sprinkles-text');
 
 const addToCartBtnGroup = grabAll('.add-to-cart');
 
+/** variables for Dessert object */
 let chocolateCovering = undefined;
 let drizzleSelection = undefined;
 let sprinklesSelection = undefined;
 let cakeSelection = undefined;
 let icingSelection = undefined;
 
+
+/** Dessert Class */
+class Dessert{
+    constructor(item, details){
+        this.item = item;
+        this.details = details;
+    }
+}
+
+/** variables and logic for cart */
+let cart = [];
+const cartSection = grab('.cart');
+// const cartModal = grab('.cart-modal');
+const cartModalContent = grab('.cart-modal-content');
+const closeCart = grab('.close-cart');
+
+const make = (element, classToAdd) => {
+    const el = document.createElement(element);
+    el.setAttribute('class', classToAdd);
+    return el;
+}
+
+function displayCart(){
+
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    })
+
+    cartSection.style.display = 'block';
+    const itemHeading = make('h3', 'cart-title');
+    itemHeading.innerText = 'Cart';
+    cartModalContent.append(itemHeading);
+
+
+    cart.forEach(dessert => {
+        const itemSection = make('section', 'cart-item');
+        const header = make('header', 'item-header');
+        const itemName = make('h4', 'item-title');
+        const spanQuantity = make('span', 'item-amount');
+        itemHeading.after(itemSection);
+        itemSection.append(header);
+        header.append(itemName);
+        header.after(spanQuantity);
+
+        itemName.innerText = dessert.item;
+        spanQuantity.innerText = dessert.details[dessert.details.length-1];
+        
+        dessert.details.forEach(detail => {
+            if (!detail){
+                console.log(detail);
+            } else {
+                const detailItem = make('p', 'item-detail');
+                detailItem.innerHTML = detail;
+                header.append(detailItem);
+            }
+        })
+    })
+
+    closeCart.addEventListener('click', ()=>{
+        cartSection.style.display = 'none';
+    })
+}
+
+/** logic for quantity */
+let counter = 0;
+const increaseBtn = grabAll('.increase-btn');
+const decreaseBtn = grabAll('.decrease-btn');
+const quantitySection = grabAll('.quantity-box');
+
+function increaseCounter(){
+    counter++;
+    return counter;
+}
+
+function decreaseCounter(){
+    if (counter === 0){
+        console.log('Cannot go lower than zero')
+    } else {
+        counter--;
+    }
+    return counter;
+}
+function updateDisplay(){
+    quantitySection.forEach(section => {
+        section.value = counter;
+    })
+}
+
+increaseBtn.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+        increaseCounter();
+        updateDisplay();
+    })
+})
+
+decreaseBtn.forEach(btn => {
+    btn.addEventListener('click', ()=>{
+        decreaseCounter();
+        updateDisplay();
+    })
+})
+
+function resetCounter(){
+    counter = 0;
+    updateDisplay();
+}
+
+
 function getSiblings(event){
     let siblings = [];
     if (!event.parentNode){
         return siblings;
     }
-
     let sibling = event.parentNode.firstChild;
     while(sibling) {
         if (sibling.nodeType === 1 && sibling !== event){
@@ -45,7 +157,6 @@ function updateSelection(e, className){
             }
         })
         e.target.style.border = '2px solid red';
-        console.log(e.target.id);
         return e.target.id;
     }
 }
@@ -54,82 +165,24 @@ chocolateCoveringSection.addEventListener('click', (e) => {
     chocolateCovering = updateSelection(e, 'oreo-covering-options');
 })
 
-// chocolateCoveringSection.addEventListener('click', (e)=>{
-//     if (e.target.classList.contains('oreo-covering-options')){
-//         let siblings = getSiblings(e.target);
-//         siblings.forEach(sibling => {
-//             if (sibling.classList.contains('oreo-covering-options')){
-//                 sibling.style.border = '1px solid black';
-//             }
-//         })
-//         e.target.style.border = '2px solid red';
-//         chocolateCovering = e.target.id;
-//     }
-// })
-
 cakeChocolateCoveringSection.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('cake-covering-options')){
-        let siblings = getSiblings(e.target);
-        siblings.forEach(sibling => {
-            if (sibling.classList.contains('cake-covering-options')){
-                sibling.style.border = '1px solid black';
-            }
-        })
-        e.target.style.border = '2px solid red';
-        chocolateCovering = e.target.id;
-    }
+    chocolateCovering = updateSelection(e, 'cake-covering-options');
 })
 
 drizzleOrSprinklesSection.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('drizzle-or-sprinkles')){
-        let siblings = getSiblings(e.target);
-        siblings.forEach(sibling => {
-            if (sibling.classList.contains('drizzle-or-sprinkles')){
-                sibling.style.border = '1px solid black';
-            }
-        })
-        e.target.style.border = '2px solid red';
-        drizzleSelection = e.target.id;
-    }
+    drizzleSelection = updateSelection(e, 'drizzle-or-sprinkles');
 })
 
 cakeDrizzleOrSprinklesSection.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('drizzle-or-sprinkles')){
-        let siblings = getSiblings(e.target);
-        siblings.forEach(sibling => {
-            if (sibling.classList.contains('drizzle-or-sprinkles')){
-                sibling.style.border = '1px solid black';
-            }
-        })
-        e.target.style.border = '2px solid red';
-        drizzleSelection = e.target.id;
-    }
+    drizzleSelection = updateSelection(e, 'drizzle-or-sprinkles');
 })
 
 cakeFlavorsSection.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('cake-flavor')){
-        let siblings = getSiblings(e.target);
-        siblings.forEach(sibling => {
-            if (sibling.classList.contains('cake-flavor')){
-                sibling.style.border = '1px solid black';
-            }
-        })
-        e.target.style.border = '2px solid red';
-        cakeSelection = e.target.id;
-    }
+    cakeSelection = updateSelection(e, 'cake-flavor');
 })
 
 icingFlavorsSection.addEventListener('click', (e)=>{
-    if (e.target.classList.contains('icing-flavors')){
-        let siblings = getSiblings(e.target);
-        siblings.forEach(sibling => {
-            if (sibling.classList.contains('icing-flavors')){
-                sibling.style.border = '1px solid black';
-            }
-        })
-        e.target.style.border = '2px solid red';
-        icingSelection = e.target.id;
-    }
+    icingSelection = updateSelection(e, 'icing-flavors');
 })
 
 oreoBtn.addEventListener('click', ()=> {
@@ -140,11 +193,12 @@ oreoBtn.addEventListener('click', ()=> {
     } else if ((drizzleSelection === 'oreo-sprinkles') && !oreoSprinklesSection.value){
         alert('Please indicate what color(s) sprinkles you would like!');
     } else {
-        console.log(oreoSprinklesSection.value);
-        console.log({chocolateCovering});
-        console.log({drizzleSelection});
-        console.log({cakeSelection});
-        console.log({icingSelection});
+        const details = [chocolateCovering, drizzleSelection, oreoSprinklesSection.value, counter ];
+        const dessert = new Dessert('Oreo Truffles', details)
+        cart.push(dessert);
+        console.log(cart);
+        displayCart();
+        resetCounter();
     }
 })
 
@@ -160,11 +214,11 @@ cakeBtn.addEventListener('click', ()=> {
     } else if ((drizzleSelection === 'cake-sprinkles') && !cakeSprinklesSection.value){
         alert('Please indicate what color(s) sprinkles you would like!');
     }  else {
-        console.log(cakeSprinklesSection.value);
-        console.log({chocolateCovering});
-        console.log({drizzleSelection});
-        console.log({cakeSelection});
-        console.log({icingSelection});
+        const details = [cakeSelection, icingSelection, chocolateCovering, drizzleSelection, cakeSprinklesSection.value, counter ];
+        const dessert = new Dessert('Cake Balls', details)
+        cart.push(dessert);
+        displayCart();
+        resetCounter();
     }
 })
 
