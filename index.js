@@ -16,8 +16,6 @@ const cakeChocolateCoveringSection = grab('.cake-chocolate-covering');
 const cakeDrizzleOrSprinklesSection = grab('.cake-drizzle-or-sprinkles-section');
 const cakeSprinklesSection = grab('#cake-sprinkles-text');
 
-const addToCartBtnGroup = grabAll('.add-to-cart');
-
 /** variables for Dessert object */
 let chocolateCovering = undefined;
 let drizzleSelection = undefined;
@@ -37,7 +35,6 @@ class Dessert{
 /** variables and logic for cart */
 let cart = [];
 const cartSection = grab('.cart');
-// const cartModal = grab('.cart-modal');
 const cartModalContent = grab('.cart-modal-content');
 const closeCart = grab('.close-cart');
 
@@ -47,17 +44,32 @@ const make = (element, classToAdd) => {
     return el;
 }
 
+function clearCartDisplay(){
+    while(closeCart.nextElementSibling) {
+        closeCart.nextElementSibling.remove();
+    }
+
+}
+
 function displayCart(){
 
+    if (!cart){
+        alert('Your cart has no items!')
+    } else {
     document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
     })
+
+    clearCartDisplay();
 
     cartSection.style.display = 'block';
     const itemHeading = make('h3', 'cart-title');
     itemHeading.innerText = 'Cart';
     cartModalContent.append(itemHeading);
 
+    const checkOutBtn = make('button', 'check-out-btn');
+    checkOutBtn.innerText = 'CHECK OUT';
+    cartModalContent.append(checkOutBtn);
 
     cart.forEach(dessert => {
         const itemSection = make('section', 'cart-item');
@@ -70,11 +82,14 @@ function displayCart(){
         header.after(spanQuantity);
 
         itemName.innerText = dessert.item;
-        spanQuantity.innerText = dessert.details[dessert.details.length-1];
+        spanQuantity.innerText = `${dessert.details[dessert.details.length-1]} dozen`;
         
-        dessert.details.forEach(detail => {
+        dessert.details.forEach((detail, index) => {
             if (!detail){
-                console.log(detail);
+                null
+            } else if (index === (dessert.details.length - 1)){
+                // if index of detail is equal to the last index of the array do not display
+                null
             } else {
                 const detailItem = make('p', 'item-detail');
                 detailItem.innerHTML = detail;
@@ -82,10 +97,15 @@ function displayCart(){
             }
         })
     })
-
+    
     closeCart.addEventListener('click', ()=>{
         cartSection.style.display = 'none';
     })
+
+    checkOutBtn.addEventListener('click', ()=>{
+        console.log('This is your cart: ', cart);
+    } )
+}
 }
 
 /** logic for quantity */
@@ -132,7 +152,7 @@ function resetCounter(){
     updateDisplay();
 }
 
-
+/** logic for making dessert selections */
 function getSiblings(event){
     let siblings = [];
     if (!event.parentNode){
@@ -157,7 +177,8 @@ function updateSelection(e, className){
             }
         })
         e.target.style.border = '2px solid red';
-        return e.target.id;
+        // return e.target.id;
+        return e.target.innerText;
     }
 }
 
@@ -190,13 +211,13 @@ oreoBtn.addEventListener('click', ()=> {
         alert('Please select a chocolate covering!');
     } else if (!drizzleSelection){
         alert('Please select drizzle or sprinkles!');
-    } else if ((drizzleSelection === 'oreo-sprinkles') && !oreoSprinklesSection.value){
+    // } else if ((drizzleSelection === 'oreo-sprinkles') && !oreoSprinklesSection.value){
+    } else if ((drizzleSelection === 'Sprinkles') && !oreoSprinklesSection.value){
         alert('Please indicate what color(s) sprinkles you would like!');
     } else {
         const details = [chocolateCovering, drizzleSelection, oreoSprinklesSection.value, counter ];
         const dessert = new Dessert('Oreo Truffles', details)
         cart.push(dessert);
-        console.log(cart);
         displayCart();
         resetCounter();
     }
@@ -211,7 +232,7 @@ cakeBtn.addEventListener('click', ()=> {
         alert('Please select a chocolate covering!');
     } else if (!drizzleSelection){
         alert('Please select drizzle or sprinkles!');
-    } else if ((drizzleSelection === 'cake-sprinkles') && !cakeSprinklesSection.value){
+    } else if ((drizzleSelection === 'Sprinkles') && !cakeSprinklesSection.value){
         alert('Please indicate what color(s) sprinkles you would like!');
     }  else {
         const details = [cakeSelection, icingSelection, chocolateCovering, drizzleSelection, cakeSprinklesSection.value, counter ];
@@ -222,6 +243,16 @@ cakeBtn.addEventListener('click', ()=> {
     }
 })
 
+/** Add other desserts */
+const addToCartBtnGroup = grabAll('.add-to-cart');
+addToCartBtnGroup.forEach(btn=>{
+ btn.addEventListener('click', ()=> {
+    //  const dessertName = btn.parentNode.childNodes[3].innerText;
+    //  const dessert = new Dessert(dessertName, [counter]);
+    //  cart.push(dessert);
+    //  displayCart();
+ }) 
+})
 
 
 

@@ -180,3 +180,8 @@
     display: flex;
     justify-content: center;
 }
+
+.check-out-btn {
+    margin: 5px;
+    padding: 7px;
+}
