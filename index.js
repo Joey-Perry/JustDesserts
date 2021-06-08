@@ -53,9 +53,15 @@ function clearCartDisplay(){
 
 function displayCart(){
 
-    if (!cart){
+    if (cart.length === 0){
         alert('Your cart has no items!')
+
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.style.display = 'none';
+        })
+
     } else {
+
     document.querySelectorAll('.modal').forEach(modal => {
         modal.style.display = 'none';
     })
@@ -97,7 +103,15 @@ function displayCart(){
             }
         })
     })
-    
+    // logic so that cart has a 'clear cart' button
+    const clearCartBtn = make('button', 'clear-cart-btn');
+    clearCartBtn.innerText = 'CLEAR CART';
+    itemHeading.after(clearCartBtn);
+    clearCartBtn.addEventListener('click', ()=>{
+        cart = [];
+        displayCart();
+    })
+
     closeCart.addEventListener('click', ()=>{
         cartSection.style.display = 'none';
     })
@@ -107,6 +121,13 @@ function displayCart(){
     } )
 }
 }
+
+/** logic to view cart */
+const viewCartBtn = grab('.view-cart');
+viewCartBtn.addEventListener('click', ()=> {
+    displayCart();
+})
+
 
 /** logic for quantity */
 let counter = 0;
@@ -206,12 +227,11 @@ icingFlavorsSection.addEventListener('click', (e)=>{
     icingSelection = updateSelection(e, 'icing-flavors');
 })
 
-oreoBtn.addEventListener('click', ()=> {
+function validateOreos() {
     if (!chocolateCovering) {
         alert('Please select a chocolate covering!');
     } else if (!drizzleSelection){
         alert('Please select drizzle or sprinkles!');
-    // } else if ((drizzleSelection === 'oreo-sprinkles') && !oreoSprinklesSection.value){
     } else if ((drizzleSelection === 'Sprinkles') && !oreoSprinklesSection.value){
         alert('Please indicate what color(s) sprinkles you would like!');
     } else {
@@ -221,9 +241,9 @@ oreoBtn.addEventListener('click', ()=> {
         displayCart();
         resetCounter();
     }
-})
+}
 
-cakeBtn.addEventListener('click', ()=> {
+function validateCakeBalls(){
     if (!cakeSelection) {
         alert('Please select a cake flavor!')
     } else if (!icingSelection){
@@ -241,16 +261,22 @@ cakeBtn.addEventListener('click', ()=> {
         displayCart();
         resetCounter();
     }
-})
+}
 
-/** Add other desserts */
+/** Add desserts */
 const addToCartBtnGroup = grabAll('.add-to-cart');
 addToCartBtnGroup.forEach(btn=>{
  btn.addEventListener('click', ()=> {
-    //  const dessertName = btn.parentNode.childNodes[3].innerText;
-    //  const dessert = new Dessert(dessertName, [counter]);
-    //  cart.push(dessert);
-    //  displayCart();
+     const dessertName = btn.parentNode.childNodes[3].innerText;
+    if (dessertName === 'Oreo Truffles'){
+        validateOreos();
+    } else if (dessertName === 'Cake Balls') {
+        validateCakeBalls();
+    } else {
+         const dessert = new Dessert(dessertName, [counter]);
+         cart.push(dessert);
+         displayCart();
+    }
  }) 
 })
 
