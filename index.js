@@ -32,6 +32,73 @@ class Dessert {
   }
 }
 
+/** Check Out Process */
+
+const makeFormField = (element, attributeType, attributeName) => {
+  const el = document.createElement(element);
+  el.setAttribute(attributeType, attributeName);
+  return el;
+}
+
+const cartInfoSection = grab('#cart-info');
+
+function startCheckOut(){
+  const cartFormContent = grab(".final-order-form");
+  cartFormContent.style.display = 'block';
+
+cart.forEach(dessert => {
+  const section = makeFormField('section', 'class', 'dessert-item');
+  const input = makeFormField('input','id', dessert.item);
+  input.setAttribute('value', dessert.item);
+  input.setAttribute('type', 'text');
+  input.setAttribute('name', 'Product Requested')
+  const label = makeFormField('label', 'for', input.id);
+  cartInfoSection.prepend(section);
+  section.append(label);
+  dessert.details.forEach((detail, index) => {
+      const detailInput = makeFormField('input', 'id', detail)
+      const detailLabel = makeFormField('label', 'for', detail);
+      detailInput.setAttribute('value', detail);
+      detailInput.setAttribute('type', 'text');
+      let fieldName = '';
+      if (dessert.item === 'Oreo Truffles'){
+          // each detail needs a label & an input 
+          if (index === 0){
+              fieldName = 'Chocolate Covering';
+          } else if (index === 1){
+              fieldName = 'Icing Choice';
+          } else if (index === 2){
+              fieldName = 'Sprinkles or Drizzle';
+          } else if (index === 3){
+              fieldName = 'Sprinkles color(s) (if applicable)';
+          } else {
+              fieldName = 'Quantity';
+          }
+      } else if (dessert.item === 'Cake Balls'){
+          if (index === 0){
+              fieldName = 'Cake flavor';
+          } else if (index === 1){
+              fieldName = 'Icing Choice';
+          } else if (index === 2){
+              fieldName = 'Chocolate Covering';
+          } else if (index === 3){
+              fieldName = 'Sprinkles or Drizzle';
+          } else {
+              fieldName = 'Quantity';
+          }
+      } else {
+          fieldName = 'Quantity'
+      }
+      detailInput.setAttribute('name', fieldName);
+      label.innerText = fieldName;
+      detailLabel.innerText = fieldName;
+      detailLabel.append(detailInput);
+      label.append(input);
+      label.after(detailLabel);
+  })
+})
+}
+
 /** variables and logic for cart */
 let cart = [];
 const cartSection = grab(".cart");
@@ -115,7 +182,8 @@ function displayCart() {
     });
 
     checkOutBtn.addEventListener("click", () => {
-      console.log("This is your cart: ", cart);
+      cartSection.style.display = "none";
+      startCheckOut();
     });
   }
 }
