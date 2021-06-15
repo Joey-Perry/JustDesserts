@@ -4,13 +4,18 @@
 
 .specialties {
     border: 2px solid blue;
-    height: 250px;
+    /* height: 350px; */
+    /* width: 1000px; */
 }
 
 .specialty-items {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    height: 350px;
+    overflow: scroll;
+    width: 1000px;
+    border: 2px solid green;
 }
 
 .section-title {
@@ -74,8 +79,7 @@
 
 .menu-item {
     border: 2px solid black;
-    height: 80px;
-    width: 80px;
+    height: 300px;
     margin: 5px;
 }
 
@@ -157,26 +161,19 @@
     padding: 7px;
 }
 
-.quantity-label {
-    /* border: 2px solid black; */
-}
-
 .quantity-section {
-    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
 .quantity-box {
-    /* border:1px solid black; */
     width: 40%;
     text-align: center;
     pointer-events: none;
 }
 
 .quantity-number-section {
-    /* border: 2px solid yellow; */
     display: flex;
     justify-content: center;
 }
@@ -212,4 +209,32 @@
 .contact-info {
     display: flex;
     flex-direction: column;
+}
+
+.menu-item-section {
+    border: 2px solid black;
+    height: 100%;
+}
+
+.menu-image {
+    width: 100%;
+}
+
+.menu-item-title {
+    font-weight: bold;
+    margin: 5px 0px;
+    font-size: 18px;
+}
+
+.menu-item-price {
+    font-size: 16px;
+    margin: 5px;
+}
+
+.menu-item-description {
+    font-size: 16px;
+}
+
+.title-price-section {
+    display: flex;
 }

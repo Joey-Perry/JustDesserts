@@ -66,10 +66,8 @@ cart.forEach(dessert => {
           if (index === 0){
               fieldName = 'Chocolate Covering';
           } else if (index === 1){
-              fieldName = 'Icing Choice';
-          } else if (index === 2){
               fieldName = 'Sprinkles or Drizzle';
-          } else if (index === 3){
+          } else if (index === 2){
               fieldName = 'Sprinkles color(s) (if applicable)';
           } else {
               fieldName = 'Quantity';
@@ -83,6 +81,8 @@ cart.forEach(dessert => {
               fieldName = 'Chocolate Covering';
           } else if (index === 3){
               fieldName = 'Sprinkles or Drizzle';
+          } else if (index === 2){
+            fieldName = 'Sprinkles color(s) (if applicable)';
           } else {
               fieldName = 'Quantity';
           }
@@ -90,7 +90,7 @@ cart.forEach(dessert => {
           fieldName = 'Quantity'
       }
       detailInput.setAttribute('name', fieldName);
-      label.innerText = fieldName;
+      label.innerText = 'Product Requested';
       detailLabel.innerText = fieldName;
       detailLabel.append(detailInput);
       label.append(input);
