@@ -1,12 +1,16 @@
+body {
+    width: 100%;
+}
+
 .hero {
     background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url(https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 25vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
-    border:2px solid red;
+    /* border:2px solid red; */
 }
 
 .title-box{
@@ -14,16 +18,24 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 10px 20px 10px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    font-family: cursive;
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 3rem;
     font-weight: bolder;
 }
 
 .title-box span {
-    font-size: 19px;
+    font-size: 2rem;
+}
+
+.title-box p {
+    padding: 10px 30px 10px 40px;
+    /* border: 1px solid black; */
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 .nav-bar {
@@ -43,14 +55,35 @@
 }
 
 .label-for-nav-toggle {
-    position: fixed;
+    position: absolute;
     top: 10px;
     right: 15px;
 }
 
 .button {
     align-self: center;
-    border: 2px solid black;
+    border: 1px solid black;
+    padding: 12px 9px;
+    border-radius: 10px;
+    background-color: rgba(128, 0, 128, 1);
+    color: white;
+    box-shadow: 1px 1px 1px -3px #000000;
+    text-decoration: none;
+    margin: 0px 15px;
+    width: 150px;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+.main {
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(230, 220, 220);
+    padding: 70px 0px;
 }
 
 .menu-section {
@@ -59,28 +92,70 @@
     align-items: center;
 }
 
-.sample-images {
-    border: 2px solid blue;
+.menu-section h3 {
+    /* font-family: cursive; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0px 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.menu-section p {
+    padding: 10px 30px 10px 40px;
+    /* border: 1px solid black; */
+    /* font-family:'Times New Roman', Times, serif; */
+    text-align: center;
+    font-size: 1.35rem;
+    margin-bottom: 35px;
 }
 
 .our-story {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(241, 228, 228);
+    padding: 150px 0px;
+    /* border: 2px solid blue; */
+}
+
+.our-story header h2 {
+    font-size: 2rem;
+    font-family: cursive;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.about-paragraph {
+    /* border: 2px solid black; */
+    padding: 10px 30px 10px 40px;
+    text-align: center;
+    font-size: 1.35rem;
+    margin-bottom: 30px;
 }
 
 footer {
-    background-color: black;
-    height: 20px;
-    position: absolute;
-    bottom: 0;
+    background-color: rgb(187, 180, 180);
+    padding: 10px;
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    cursor: pointer;
 }
 
 #image-section {
-    border: 2px solid black;
     height: 150px;
     width: 200px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-bottom: 30px;
 }
