@@ -40,9 +40,9 @@ const oreoDescription = 'A fan favorite! Cookies and cream cheese combined to ma
 ' treat covered with an outer layer of hardened chocolate.';
 
 createMenuItems(0, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(1, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(2, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(3, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(4, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(5, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
-createMenuItems(6, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription)
+createMenuItems(1, "https://res.cloudinary.com/hannahj/image/upload/v1591142585/babyshowercakeballs_hwcgat.jpg", 'Cake Balls |', '$15', oreoDescription)
+createMenuItems(2, "https://res.cloudinary.com/hannahj/image/upload/v1576306736/IMG_3600_3_hrpdnx.jpg", 'The Goodness |', '$20', oreoDescription)
+createMenuItems(3, "https://res.cloudinary.com/hannahj/image/upload/v1576306990/IMG_3832_t5ndnk.jpg", 'Chocolate Pie |', '$15', oreoDescription)
+createMenuItems(4, "https://res.cloudinary.com/hannahj/image/upload/v1576307549/IMG_3790_avonru.jpg", 'Cheesecake Brownies |', '$25', oreoDescription)
+createMenuItems(5, "https://res.cloudinary.com/hannahj/image/upload/v1591143453/mintchocolatelasagna_fcvwdc.jpg", 'Mint Chocolate Lasagna |', '$25', oreoDescription)
+createMenuItems(6, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', oreoDescription)
