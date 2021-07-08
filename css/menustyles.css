@@ -1,6 +1,6 @@
 .main {
     border: 2px solid black;
-    width: 100%;
+    width: 100vw;
 }
 
 .specialties {
@@ -25,8 +25,6 @@
 
 .classics {
     border: 2px solid red;
-    margin-top: 100px;
-    /* height: 250px; */
 }
 
 .classic-items {
@@ -39,7 +37,6 @@
     border: 2px solid black;
     display: none;
     height: 200px;
-    width: 200px;
 }
 
 .cart-title {
@@ -184,7 +181,7 @@
 }
 
 .view-cart {
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 .close-cart {
