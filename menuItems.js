@@ -45,6 +45,11 @@ const chocolatePieDesc = 'Looking for a chilled dessert that will scratch that c
 const cheesecakeBrowniesDesc = "An up and coming item that is sure to become a classic! An amazing mix of cream cheese and brownies, this is something you'll order two of after you've tried it!";
 const mintChocDesc = 'A frozen paradise of chocolate and mint! With the consistency of ice-cream cake, this dessert layered with chocolate puddding, cream cheese, cool whip is definitely what you need to cool down on a hot summer day!';
 const chocolateChipDesc = "The classic of all classics! Two dozen of these will change your life for the better! If you're a fan of chocolate but you're not sure what to get, this is a great starting point.";
+const peanutButterDesc = "Got friends coming in town and want to treat them to something special? Look no further than these peanut butter cookies. Buttery, soft and with that addictive peanut butter taste these are the cookies you've been waiting for!";
+const snickerdoodleDesc = "A dash of cinnamon with a soft and chewy center, these will be the highlight of your next get together with your friends. They will definitely want to know where you got them and you'll be an instant favorite!";
+const tripleChocCakeDesc = "If you haven't noticed, we love our chocolate around here! So much so that we added three different kinds to this cake!";
+const fluffySugarCookieDesc = "";
+const frostedSugarCookieDesc = "";
 
 createMenuItems(0, "https://res.cloudinary.com/hannahj/image/upload/v1576307862/IMG_3963_2_tmuk7v.jpg", 'Oreo Truffles |', '$15', oreoDescription);
 createMenuItems(1, "https://res.cloudinary.com/hannahj/image/upload/v1591142585/babyshowercakeballs_hwcgat.jpg", 'Cake Balls |', '$15', cakeBallDescription);
@@ -53,8 +58,8 @@ createMenuItems(3, "https://res.cloudinary.com/hannahj/image/upload/v1576306990/
 createMenuItems(4, "https://res.cloudinary.com/hannahj/image/upload/v1576307549/IMG_3790_avonru.jpg", 'Cheesecake Brownies |', '$25', cheesecakeBrowniesDesc);
 createMenuItems(5, "https://res.cloudinary.com/hannahj/image/upload/v1591143453/mintchocolatelasagna_fcvwdc.jpg", 'Mint Chocolate Lasagna |', '$25', mintChocDesc);
 createMenuItems(6, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
-createMenuItems(7, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
-createMenuItems(8, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
-createMenuItems(9, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
-createMenuItems(10, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
-createMenuItems(11, "https://res.cloudinary.com/hannahj/image/upload/v1576307224/image000000_zaccck.jpg", 'Chocolate Chip Cookies |', '$10', chocolateChipDesc);
+createMenuItems(7, "https://res.cloudinary.com/hannahj/image/upload/v1591144619/IMG_3666_b2atwq.jpg", 'PeanutButter Cookies |', '$15', peanutButterDesc);
+createMenuItems(8, "https://res.cloudinary.com/hannahj/image/upload/v1576306701/IMG_3781_ypkpog.jpg", 'Snickerdoodle Cookies |', '$10', snickerdoodleDesc);
+createMenuItems(9, "https://res.cloudinary.com/hannahj/image/upload/v1591143455/3xchocolatecake_jrq7z9.jpg", 'Triple Chocolate Cake |', '$26', tripleChocCakeDesc);
+createMenuItems(10, "https://res.cloudinary.com/hannahj/image/upload/v1591143455/fluffysugarcookies_mltvvf.jpg", 'Fluffy Sugar Cookies |', '$18', fluffySugarCookieDesc);
+createMenuItems(11, "https://res.cloudinary.com/hannahj/image/upload/v1591144398/frostedsugarcookies_xzl7ti.jpg", 'Frosted Sugar Cookies |', '$18', frostedSugarCookieDesc);

@@ -75,6 +75,22 @@ body {
     font-size: 1.25rem;
 }
 
+.page-title {
+    align-self: center;
+    border: 1px solid transparent;
+    padding: 12px 9px;
+    border-radius: 10px;
+    background-color: rgb(212, 209, 212);
+    color: black;
+    box-shadow: 1px 1px 1px -3px #000000;
+    text-decoration: none;
+    margin: 0px 15px;
+    width: 150px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+
 .button:hover {
     cursor: pointer;
 }
