@@ -353,6 +353,7 @@ addToCartBtnGroup.forEach((btn) => {
         } else if (dessertName === "Cake Balls") {
             validateCakeBalls();
         } else {
+            // console.log(btn.parentNode.childNodes[7].childNodes[1].childNodes);
             const amountUnits = btn.parentNode.childNodes[7].childNodes[1].childNodes[5].innerText;
             const dessert = new Dessert(dessertName, [`${counter} ${amountUnits}`]);
             cart.push(dessert);

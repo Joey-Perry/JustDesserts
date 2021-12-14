@@ -18,7 +18,7 @@
           <span>A Sweetery</span>
           <p>A made-to-order dessert company catering to the Houston area.</p>
       </section>
-      <input type='checkbox' class='nav-toggle' id='nav-toggle' />
+      <!-- <input type='checkbox' class='nav-toggle' id='nav-toggle' />
       <label for='nav-toggle' class='label-for-nav-toggle'> X </label>
       <nav class='nav-bar'>
           <ul class='nav-links'>
@@ -27,13 +27,18 @@
               <li><a href='about.html'>About</a></li>
               <li><a href='contact.html'>Contact</a></li>
           </ul>
-      </nav>
+      </nav> -->
 
       <div class='page-title' href=''>MENU </div>
   </header>
 
     <main class="main">
-      <button class='view-cart'>VIEW CART</button>
+      <button class='view-cart'>
+        View Cart
+        <div class='img-container'>
+          <img class='cart-img' src='cart.jpeg' />
+        </div>
+      </button>
       <section class="specialties">
         <header class="section-title">
           <h2>Specialties</h2>
@@ -279,9 +284,10 @@
                       <input disabled type="number" class="quantity-box" />
                       <button class="increase-btn">+</button>
                     </section>
+                    <p> Pan(s) </p>
                   </section>
-                  <p> Pan(s) </p>
                 </section>
+              <!-- </section> -->
 
                 <button class="add-to-cart">ADD TO CART</button>
               </div>
@@ -292,6 +298,7 @@
           </section>
         </section>
       </section>
+
       <section class="classics">
         <header class="section-title">
           <h2>Classics</h2>
@@ -316,7 +323,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Dozen </p>
                 </section>
               </section>
 
@@ -348,7 +355,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Dozen </p>
                 </section>
               </section>
 
@@ -380,7 +387,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Dozen </p>
                 </section>
               </section>
 
@@ -412,7 +419,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Cake(s) </p>
                 </section>
               </section>
 
@@ -444,7 +451,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Dozen </p>
                 </section>
               </section>
 
@@ -476,7 +483,7 @@
                     <input disabled type="number" class="quantity-box" />
                     <button class="increase-btn">+</button>
                   </section>
-                  <p> Pan(s) </p>
+                  <p> Dozen </p>
                 </section>
               </section>
 
@@ -498,7 +505,7 @@
     </section>
 
     </section>
-    <form method='GET' action="#" class="final-order-form modal">
+    <form method='post' action="https://formspree.io/mgewrdqp" class="final-order-form modal">
       <section class='form-modal-content'>
       <summary>
         Contact Info
@@ -535,7 +542,15 @@
   </section>
     </form>
 
-    <footer></footer>
+    <footer>
+      <ul class='nav-links'>
+          <li><a href='index.html'>Home</a></li>
+          <li><a href='menu.html'>Menu</a></li>
+          <li><a href='about.html'>About</a></li>
+          <li><a href='contact.html'>Contact</a></li>
+          <li><a href='privacyPolicy.html'>Privacy Policy</a></li>
+      </ul>
+  </footer>
     <script>
       document.querySelectorAll(".menu-item-div").forEach((item) => {
         item.addEventListener("click", (event) => {
