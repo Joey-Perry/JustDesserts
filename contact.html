@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <title>Just Desserts || Contact </title>
+</head> 
+<body>
+    <header class='hero'>
+        <section class='title-box'>
+            <h1 class='contact-logo'> How can we help?</h1>
+            <!-- <span>Reach out to us anytime!</span> -->
+            <!-- <p>We are a made-to-order dessert company catering to the Houston area.</p> -->
+        </section>
+
+        <a class='page-title'>Contact </a>
+    </header>
+    <main class='main'>
+        <h2 class='contact-title'>Ask A Question </h2>
+
+        <form class='contact-form' method='post' action="https://formspree.io/mgewrdqp">
+            <section class='form-field'>
+                <label for='firstName'>First Name</label>
+                <input type='text' id='firstName' name='firstName' required />
+            </section>
+
+            <section class='form-field'>
+                <label for='lastName'>Last Name</label>
+                <input type='text' id='lastName' name='lastName' required />
+            </section>
+
+            <section class='form-field'>
+                <label for='phoneNumber'>Phone Number</label>
+                <input type='text' id='phoneNumber' name='phoneNumber' required />
+            </section>
+
+            <section class='form-field'>
+                <label for='emailAddress'>Email Address</label>
+                <input type='email' id='emailAddress' name='emailAddress' required />
+            </section>
+
+            <section class='form-field'>
+                <label for='question-area'></label>
+                <textarea 
+                    type='text' id='questionArea' name='questionArea'
+                    placeholder='What is your question?'></textarea>
+            </section>
+
+            <button id='contact-submit-btn'>SUBMIT</button>
+        </form>
+    </main>
+    <footer>
+        <ul class='nav-links'>
+            <li><a href='index.html'>Home</a></li>
+            <li><a href='menu.html'>Menu</a></li>
+            <li><a href='about.html'>About</a></li>
+            <li><a href='contact.html'>Contact</a></li>
+            <!-- <li><a href='privacyPolicy.html'>Privacy Policy</a></li> -->
+        </ul>
+    </footer>
+    <script src='contact.js'></script>
+</body>
+</html>

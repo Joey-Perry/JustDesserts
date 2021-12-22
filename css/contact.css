@@ -1,0 +1,38 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 50px;
+    padding-left: 75px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    padding-top: 25px;
+}
+
+.contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.contact-logo {
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+#contact-submit-btn {
+    width: 90%;
+}
+
+.form-field label {
+    font-size: 1.05rem;
+    font-weight: bold;
+}
