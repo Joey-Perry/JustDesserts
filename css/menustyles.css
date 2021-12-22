@@ -259,11 +259,21 @@
 
 @media only screen and (min-width: 1000px){
     .menu-item-div {
-        border: 2px solid red;
-        width: 30%;
+        /* border: 2px solid black; */
+        width: 100%;
+        /* border-radius: 40px; */
     }
 
-    .specialties {
-        /* display: flex; */
+    .specialty-items {
+        display: flex;
+        /* border: 2px solid blue; */
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .menu-item {
+        /* border: 2px solid green; */
+        width: 400px;
+        margin-right: 50px;
     }
 }
