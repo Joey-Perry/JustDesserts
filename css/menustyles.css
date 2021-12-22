@@ -256,3 +256,14 @@
 .title-price-section {
     display: flex;
 }
+
+@media only screen and (min-width: 1000px){
+    .menu-item-div {
+        border: 2px solid red;
+        width: 30%;
+    }
+
+    .specialties {
+        /* display: flex; */
+    }
+}

@@ -198,3 +198,45 @@ footer a:hover {
     width: 200px;
     background-position: center;
 }
+
+.desktop-nav-bar {
+    display: none;
+}
+
+@media screen and (min-width: 1000px){
+    .hero {
+        border: 2px solid black;
+        padding-top: 50px;
+    }
+    body {
+        /* margin-top: 100px; */
+    }
+
+    .desktop-nav-bar {
+        display: flex;
+        position: fixed;
+        width: 100%;
+    }
+    .desktop-nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 10px 0px;
+        border-top: 6px solid rgba(128, 0, 128, 1);
+        background-color: white;
+    }
+    .desktop-nav-links a {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+    }
+    .desktop-nav-links a:hover {
+        cursor: pointer;
+        color:rgba(128, 0, 128, 1)
+    }
+
+    footer .nav-links {
+        display: none;
+    }
+}
