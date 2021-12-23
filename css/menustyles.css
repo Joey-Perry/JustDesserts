@@ -267,13 +267,18 @@
     .specialty-items {
         display: flex;
         /* border: 2px solid blue; */
+        padding: 0px 100px;
         flex-wrap: wrap;
         flex-direction: row;
     }
 
+    .classic-items {
+        padding: 0px 100px;
+    }
+
     .menu-item {
         /* border: 2px solid green; */
-        width: 400px;
+        width: 300px;
         margin-right: 50px;
     }
 }

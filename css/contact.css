@@ -10,6 +10,8 @@
     align-items: center;
     padding: 0;
     padding-top: 25px;
+    padding-bottom: 100px;
+    border: 2px solid blue;
 }
 
 .contact-title {

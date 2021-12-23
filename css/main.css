@@ -87,7 +87,7 @@ body {
 .page-title {
     align-self: center;
     border: 1px solid transparent;
-    padding: 12px 9px;
+    padding: 6px 9px;
     border-radius: 10px;
     background-color: rgb(212, 209, 212);
     color: black;
@@ -163,24 +163,44 @@ body {
 }
 
 footer {
-    /* background-color: rgb(187, 180, 180); */
-    padding: 10px;
-    /* color: white; */
-    /* position: absolute; */
-    /* bottom: 0; */
     font-weight: bold;
     font-size: 1.5rem;
     line-height: 35px;
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 footer a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 footer a:hover {
     cursor: pointer;
+}
+
+#hamburger-menu-btn {
+    background-image: url('../icons8-menu.svg');
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+}
+
+#nav-links {
+    background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-btn-container {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
 }
 
 #image-section {
@@ -234,6 +254,10 @@ footer a:hover {
     }
 
     footer .nav-links {
+        display: none;
+    }
+    
+    #hamburger-menu-btn {
         display: none;
     }
 }

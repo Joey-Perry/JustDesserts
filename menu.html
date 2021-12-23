@@ -26,16 +26,6 @@
           <span>A Sweetery</span>
           <p>We are a made-to-order dessert company catering to the Houston area.</p>
       </section>
-      <!-- <input type='checkbox' class='nav-toggle' id='nav-toggle' />
-      <label for='nav-toggle' class='label-for-nav-toggle'> X </label>
-      <nav class='nav-bar'>
-          <ul class='nav-links'>
-              <li><a href='index.html'>Home</a></li>
-              <li><a href='menu.html'>Menu</a></li>
-              <li><a href='about.html'>About</a></li>
-              <li><a href='contact.html'>Contact</a></li>
-          </ul>
-      </nav> -->
 
       <div class='page-title' href=''>MENU </div>
   </header>
@@ -551,7 +541,11 @@
     </form>
 
     <footer>
-      <ul class='nav-links'>
+      <div class='menu-btn-container'>
+          <div id='hamburger-menu-btn'></div>
+      </div>
+
+      <ul class='nav-links hidden' id='nav-links'>
           <li><a href='index.html'>Home</a></li>
           <li><a href='menu.html'>Menu</a></li>
           <li><a href='about.html'>About</a></li>
@@ -579,5 +573,6 @@
     <script src="index.js"></script>
     <script src="date.js"></script>
     <script src="menuItems.js"></script>
+    <script src='menuBtn.js'></script>
   </body>
 </html>
